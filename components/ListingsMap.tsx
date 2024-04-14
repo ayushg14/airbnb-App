@@ -2,7 +2,7 @@ import { defaultStyles } from "@/constants/Styles";
 import { Listing } from "@/interfaces/listing";
 import { ListingGeo } from "@/interfaces/listingMap";
 import { useRouter } from "expo-router";
-import React from "react";
+import React, { memo } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import MapView from "react-native-map-clustering";
@@ -18,7 +18,7 @@ const INITIAL_REGION = {
   longitudeDelta: 9,
 };
 
-const ListingsMap = ({ listings }: Props) => {
+const ListingsMap = memo(({ listings }: Props) => {
   const router = useRouter();
   const onMarkerSelected = (item: any) => {
     router.push(`/listing/${item.properties.id}`);
@@ -79,7 +79,7 @@ const ListingsMap = ({ listings }: Props) => {
       </MapView>
     </View>
   );
-};
+});
 
 const styles = StyleSheet.create({
   container: {
