@@ -68,7 +68,7 @@ const ExploreHeader = ({ onCategoryChanged }: Props) => {
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
       <View style={styles.container}>
         <View style={styles.actionRow}>
-          <Link href={"/(modals)/login"} asChild>
+          <Link href={"/(modals)/booking"} asChild>
             <TouchableOpacity style={styles.searchBtn}>
               <Ionicons name="search" size={24} />
               <View>
